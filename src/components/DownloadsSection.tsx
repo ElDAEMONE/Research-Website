@@ -8,21 +8,21 @@ interface DownloadItem {
 }
 
 const documents: DownloadItem[] = [
-  { title: 'Topic Assessment', submittedOn: 'Done', type: 'Group', link: '#' },
-  { title: 'Project Charter', submittedOn: 'Done', type: 'Group', link: '#' },
-  { title: 'Project Proposal', submittedOn: 'Done', type: 'Individual', link: '#' },
-  { title: 'Status Documents I', submittedOn: 'Done', type: 'Individual', link: '#' },
+  { title: 'Topic Assessment', submittedOn: 'Done', type: 'Group', link: '/pdf/Taf.docx' },
+  { title: 'Project Charter', submittedOn: 'Done', type: 'Group', link: '/pdf/RETAF.pdf' },
+  { title: 'Project Proposal', submittedOn: 'Done', type: 'Individual', link: '/pdf/ProjectProposal.pdf' },
+  { title: 'Status Documents I', submittedOn: 'Done', type: 'Individual', link: '/pdf/StatusDoc1.pdf' },
   { title: 'Status Documents II', submittedOn: 'Yet to be submitted, link will be updated soon.', type: 'Individual' },
-  { title: 'Research Paper', submittedOn: 'Yet to be submitted, link will be updated soon.', type: 'Group' },
-  { title: 'Final Report', submittedOn: 'Done', type: 'Group', link: '#' },
-  { title: 'Final Report', submittedOn: 'Done', type: 'Individual', link: '#' },
-  { title: 'Poster', submittedOn: 'Done', type: 'Group', link: '#' },
+  { title: 'Research Paper', submittedOn: 'Done', type: 'Group', link:'/pdf/ResearchPaper.pdf' },
+  { title: 'Final Report', submittedOn: 'Done', type: 'Group', link: '/pdf/FinalReport.pdf' },
+  { title: 'Final Report', submittedOn: 'Done', type: 'Individual', link: '/pdf/FinalReportIndividual.pdf' },
+  { title: 'Poster', submittedOn: 'Done', type: 'Group', link: '/pdf/Poster.pdf' },
 ]
 
 const presentations: DownloadItem[] = [
-  { title: 'Project Proposal', submittedOn: 'Done', type: 'Group', link: '#' },
-  { title: 'Progress Presentation I', submittedOn: 'Done', type: 'Group', link: '#' },
-  { title: 'Progress Presentation II', submittedOn: 'Done', type: 'Group', link: '#' },
+  { title: 'Project Proposal', submittedOn: 'Done', type: 'Group', link: '/pdf/ProjectProposalPresentation.pdf' },
+  { title: 'Progress Presentation I', submittedOn: 'Done', type: 'Group', link: '/pdf/ProgressPresentation1.pdf' },
+  { title: 'Progress Presentation II', submittedOn: 'Done', type: 'Group', link: '/pdf/ProgressPresentation2.pdf' },
   { title: 'Final Presentation', submittedOn: 'Yet to be submitted, link will be updated soon.', type: 'Group' },
 ]
 
@@ -45,7 +45,7 @@ const DownloadsSection: React.FC = () => {
               <td className="px-4 py-2">{item.submittedOn}</td>
               <td className="px-4 py-2">{item.type}</td>
               <td className="px-4 py-2">
-                {item.link ? (
+                {item.link && item.submittedOn === 'Done' ? (
                   <a
                     href={item.link}
                     className="text-sm text-white bg-emerald-500 hover:bg-orange-400 px-3 py-1 rounded"
